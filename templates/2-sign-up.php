@@ -69,8 +69,9 @@
             else 
             {
                 move_uploaded_file($_FILES['inpFile']['tmp_name'], $target);
-                $user_id = $getFromU->create('user', array('Email' => $email,'Password' => md5($password), 'Full_Name' => $fullname, 'Username' => $username, 'Photo' =>$target, 'RegDate' => date("Y-m-d H:i:s")));
-                $_SESSION['UserId'] = $user_id; 
+                $user_id = $getFromU->create('user', array('Email' => $email,'Password' => md5($password), 'Full_Name' => $fullname, 'Username' => $username, 'Photo' =>$target, 'authority' => 'user', 'RegDate' => date("Y-m-d H:i:s")));
+                $_SESSION['UserId'] = $user_id;
+                $_SESSION['authority'] = 'user'; 
                 $_SESSION['swal'] = "<script>
                     Swal.fire({
                         title: 'Yay!',

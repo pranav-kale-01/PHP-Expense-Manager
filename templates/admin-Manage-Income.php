@@ -6,12 +6,12 @@
         header('Location: ../index.php');
 	}
 
-	include_once 'skeleton.php'; 
+	include_once 'admin-skeleton.php'; 
 
-	// Deletes expense record
+	// Deletes income record
 	if(isset($_POST['delrec']))
 	{
-		$getFromE->delexp($_POST['ID']);
+		$getFromI->delinc($_POST['ID']);
 		echo "<script>
 				Swal.fire({
 					title: 'Done!',
@@ -20,9 +20,7 @@
 					confirmButtonText: 'Cool!'
 				})
 				</script>";
-	}
-
-	
+	}	
 ?>
 
 <div class="wrapper">
@@ -33,7 +31,7 @@
                         
                         <i class="fas fa-ellipsis-h"></i>
                         <h3 style="font-family:'Source Sans Pro'; font-size: 1.5em;">
-                            Expenses
+                            Income
                         </h3>
                    </div>
                    <div class="card-content">
@@ -49,17 +47,17 @@
 							</thead>
 							<tbody>
 								<?php 
-										$totexp = $getFromE->allexp('_');
-										if($totexp !== NULL)
+										$totinc = $getFromI->allinc('_');
+										if($totinc !== NULL)
 										{
-											$len = count($totexp);
+											$len = count($totinc);
 											for ($x = 1; $x <= $len; $x++) {
 											echo "<tr>
 												<td>".$x."</td>
-												<td>".$totexp[$x-1]->Item."</td>
-												<td>"."₹ ".$totexp[$x-1]->Cost."</td>
-												<td>".date("d-m-Y",strtotime($totexp[$x-1]->Date))."</td>	
-												<td><form style='margin-block-end: 0;' action='' method='post'><input style='display:none;' name='ID' value=".$totexp[$x-1]->ID."></input><button type='submit' name='delrec' class='btn btn-default' style='background:none; color:#8f8f8f; font-size:1em;'>
+												<td>".$totinc[$x-1]->Item."</td>
+												<td>"."₹ ".$totinc[$x-1]->Cost."</td>
+												<td>".date("d-m-Y",strtotime($totinc[$x-1]->Date))."</td>	
+												<td><form style='margin-block-end: 0;' action='' method='post'><input style='display:none;' name='ID' value=".$totinc[$x-1]->ID."></input><button type='submit' name='delrec' class='btn btn-default' style='background:none; color:#8f8f8f; font-size:1em;'>
 												<i class='far fa-trash-alt' style='color:red;'></i></button></form></td>
 											</tr>";	
 											}

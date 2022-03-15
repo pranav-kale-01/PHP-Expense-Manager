@@ -14,7 +14,7 @@
 		$dt = date("Y-m-d H:i:s", strtotime($_POST["dateexpense"]));
 		$itemname = $_POST['item'];
 		$itemcost = $_POST['costitem'];
-		$getFromE->create("expense", array('UserId'=> '_', 'Item' => $itemname, 'Cost'=>$itemcost, 'Date' => $dt));
+		$getFromE->create("income", array('UserId'=> '_', 'Item' => $itemname, 'Cost'=>$itemcost, 'Date' => $dt));
 		echo '<script>
 			Swal.fire({
 				title: "Done!",
@@ -33,7 +33,7 @@
                     <div class="counter bg-danger" style="height: 60vh; display: flex; align-items: center; justify-content: center;">
                     <form action="" method="post">
 								<div>
-									<label style="font-family: 'Source Sans Pro'; font-size: 1.3em; ">Date of Expense:</label><br><br>
+									<label style="font-family: 'Source Sans Pro'; font-size: 1.3em; ">Date of Income:</label><br><br>
 									<input class="text-input" type="datetime-local" value="" name="dateexpense" required="true" style="width: 100%; padding-top: 8px; "><br><br>
 								</div>
 								<div>

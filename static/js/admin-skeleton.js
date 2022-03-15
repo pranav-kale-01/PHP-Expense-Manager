@@ -91,16 +91,16 @@ function open1() {
     {
         val.classList.add("open");
         console.log(val.classList);
-        sib1.outerHTML = `<li class="sidebar-nav-item">
-                            <a href="5-Add-Expenses.php" class="sidebar-nav-link">
-                                <div>
-                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                                </div>
-                                <span>
-                                    Add Expenses
-                                </span>
-                            </a>
-                        </li>`
+        // sib1.outerHTML = `<li class="sidebar-nav-item">
+        //                     <a href="5-Add-Expenses.php" class="sidebar-nav-link">
+        //                         <div>
+        //                         <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        //                         </div>
+        //                         <span>
+        //                             Add Expenses
+        //                         </span>
+        //                     </a>
+        //                 </li>`
         sib2.outerHTML = `<li class="sidebar-nav-item">
                                 <a href="6-Manage-Expenses.php" class="sidebar-nav-link">
                                     <div>
@@ -115,16 +115,16 @@ function open1() {
     else
     {
         val.classList.remove("open");
-        sib1.outerHTML = `<li class="sidebar-nav-item" style="display: none">
-                                <a href="5-Add-Expenses.php" class="sidebar-nav-link">
-                                <div>
-                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                                </div>
-                                <span>
-                                    Add Expenses
-                                </span>
-                                </a>
-                            </li>`
+        // sib1.outerHTML = `<li class="sidebar-nav-item" style="display: none">
+        //                         <a href="5-Add-Expenses.php" class="sidebar-nav-link">
+        //                         <div>
+        //                         <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        //                         </div>
+        //                         <span>
+        //                             Add Expenses
+        //                         </span>
+        //                         </a>
+        //                     </li>`
         sib2.outerHTML = `<li class="sidebar-nav-item">
                                 <a href="6-Manage-Expenses.php" class="sidebar-nav-link" style="display: none">
                                 <div>
@@ -143,29 +143,40 @@ function open2() {
     let val = document.getElementById('ER');
     let sib1 = val.nextElementSibling;
     let sib2 = sib1.nextElementSibling;
-    // let sib3 = sib2.nextElementSibling;
+    let sib3 = sib2.nextElementSibling;
     if(val.classList.length === 1)
     {
         val.classList.add("open");
         console.log(val.classList);
 
         sib1.outerHTML = `<li class="sidebar-nav-item">
-                                <a href="Add-Income.php" class="sidebar-nav-link">
+                                <a href="17-admin-datewise.php" class="sidebar-nav-link">
                                     <div>
                                         <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                     </div>
                                     <span>
-                                        Add Income
+                                        Datewise Report
                                     </span>
                                 </a>
                             </li>`
         sib2.outerHTML = `<li class="sidebar-nav-item">
-                                <a href="Manage-Income.php" class="sidebar-nav-link">
+                                <a href="18-admin-monthly.php" class="sidebar-nav-link">
                                     <div>
                                         <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                     </div>
                                     <span>
-                                        Manage Income
+                                        Monthly Report
+                                    </span>
+                                </a>
+                            </li>`
+        
+        sib3.outerHTML = `<li class="sidebar-nav-item">
+                                <a href="19-admin-yearly.php" class="sidebar-nav-link">
+                                    <div>
+                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                                    <span>
+                                        Yearly Report
                                     </span>
                                 </a>
                             </li>`
@@ -174,26 +185,36 @@ function open2() {
     {
         val.classList.remove("open");
         sib1.outerHTML = `<li class="sidebar-nav-item" style="display:none;">
-                                <a href="Add-Income.php" class="sidebar-nav-link">
+                                <a href="17-admin-datewise.php" class="sidebar-nav-link">
                                     <div>
                                         <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                     </div>
                                     <span>
-                                        Add Income
+                                        Datewise Report
                                     </span>
                                 </a>
                             </li>`
         sib2.outerHTML = `<li class="sidebar-nav-item" style="display: none;">
-                                <a href="Manage-Income.php" class="sidebar-nav-link">
+                                <a href="18-admin-monthly.php" class="sidebar-nav-link">
                                     <div>
                                         <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                     </div>
                                     <span>
-                                        Manage Income
+                                        Monthly Report
                                     </span>
                                 </a>
                             </li>`
 
+        sib3.outerHTML = `<li class="sidebar-nav-item" style="display:none;">
+                                <a href="19-admin-yearly.php" class="sidebar-nav-link">
+                                    <div>
+                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                                    <span>
+                                        Yearly Report
+                                    </span>
+                                </a>
+                            </li>`
     }
 
 }

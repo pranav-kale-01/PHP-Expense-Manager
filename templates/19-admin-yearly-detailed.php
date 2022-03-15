@@ -6,7 +6,7 @@
         header('Location: ../index.php');
 	}
 	
-	include_once 'skeleton.php'; 	
+	include_once 'admin-skeleton.php'; 	
 	
 ?>
 
@@ -32,7 +32,7 @@
 						</thead>
 						<tbody>
 							<?php 
-								$yrexp = $getFromE->yrwise('_',$_SESSION['yrfrom'],$_SESSION['yrto']);
+								$yrexp = $getFromE->yrwise($_SESSION['UserId'],$_SESSION['yrfrom'],$_SESSION['yrto']);
 								if($yrexp !== NULL)
 								{
 									$len = count($yrexp);

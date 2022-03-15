@@ -15,7 +15,7 @@
         }
 
         // Logs a user in
-        public function login($username, $password) 
+        public function login($username, $password, $location) 
         {
             $stmt = $this->pdo->prepare("SELECT UserId FROM user WHERE Username = :username AND Password = :password");
             $stmt->bindParam(":username", $username, PDO::PARAM_STR);
@@ -29,7 +29,30 @@
             {
 
                 $_SESSION['UserId'] = $user->UserId;
-                header("Location: templates/3-Dashboard.php");
+                header("Location: $location/3-Dashboard.php");
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        // Logs a user in
+        public function loginAdmin($username, $password, $location) 
+        {
+            $stmt = $this->pdo->prepare("SELECT UserId FROM user WHERE Username = :username AND Password = :password");
+            $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+            $hash = md5($password);
+            $stmt->bindParam(":password", $hash, PDO::PARAM_STR);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+            $count = $stmt->rowCount();
+            
+            if($count>0)
+            {
+
+                $_SESSION['UserId'] = $user->UserId;
+                header("Location: $location/13-admin-Dashboard.php");
             }
             else
             {
@@ -63,6 +86,26 @@
             $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_OBJ);
             $count = $stmt->rowCount();
+            if($count>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        // Checks if current user is a admin or not 
+        public function checkAdmin($username)
+        {
+            $stmt = $this->pdo->prepare("SELECT authority FROM user WHERE Username = :username and authority = 'admin'");
+            $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+            $count = $stmt->rowCount();
+
             if($count>0)
             {
                 return true;

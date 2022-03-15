@@ -82,7 +82,7 @@
     <div class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="sidebar-nav-item">
-                <a href="3-Dashboard.php" class="sidebar-nav-link">
+                <a href="13-admin-Dashboard.php" class="sidebar-nav-link">
                     <div>
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
@@ -91,40 +91,20 @@
                     </span>
                 </a>
             </li>
-            <!-- <li class="sidebar-nav-item">
-                <a href="4-Set-Budget.php" class="sidebar-nav-link">
+            <li class="sidebar-nav-item">
+                <a href="admin-Manage-Income.php" class="sidebar-nav-link">
                     <div>
                         <i class="fas fa-coins"></i>
                     </div>
                     <span>
-                        Set Budget 
+                        Manage Income 
                     </span>
                 </a>
-            </li> -->
-            <li class="sidebar-nav-item" id="Expense" onclick="open1()">
-                <a href="#" class="sidebar-nav-link">
+            </li>
+            <li class="sidebar-nav-item" id="Expense">
+                <a href="16-admin-Manage-Expenses.php" class="sidebar-nav-link">
                     <div>
                         <i class="fa fa-plus-circle"></i>
-                    </div>
-                    <span>
-                        Expenses
-                    </span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item" style="display: none;">
-                <a href="5-Add-Expenses.php" class="sidebar-nav-link">
-                    <div>
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </div>
-                    <span>
-                        Add Expenses
-                    </span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item" style="display: none">
-                <a href="6-Manage-Expenses .php" class="sidebar-nav-link" style="display: none">
-                    <div>
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </div>
                     <span>
                         Manage Expenses
@@ -137,27 +117,37 @@
                         <i class="fas fa-calendar-day"></i>
                     </div>
                     <span>
-                        Manage Income
-                    </span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item" style="display: none;">
-                <a href="Add-Income.php" class="sidebar-nav-link">
-                    <div>
-                        <i class="fas fa-calendar-week"></i>
-                    </div>
-                    <span>
-                        Add Income
+                        Expense Report
                     </span>
                 </a>
             </li>
             <li class="sidebar-nav-item" style="display:none;">
-                <a href="9-Yearly.php" class="sidebar-nav-link">
+                <a href="17-admin-datewise-detailed.php" class="sidebar-nav-link">
+                    <div>
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <span>
+                        Datewise Report
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar-nav-item" style="display: none;">
+                <a href="18-admin-monthly.php" class="sidebar-nav-link">
+                    <div>
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <span>
+                        Monthly Report
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar-nav-item" style="display:none;">
+                <a href="19-admin-yearly.php" class="sidebar-nav-link">
                     <div>
                         <i class="fas fa-calendar"></i>
                     </div>
                     <span>
-                        Manage Income
+                        Yearly Report
                     </span>
                 </a>
             </li>
@@ -167,5 +157,5 @@
     <!-- Main Content -->
     <!-- end main content -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="../static/js/skeleton.js"></script>
+    <script src="../static/js/admin-skeleton.js"></script>
 </body>

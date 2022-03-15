@@ -58,7 +58,8 @@
 }
 
 .bg-danger{
-    background: var(--danger-color);
+    /* background: var(--danger-color); */
+    background: url('../images/bg12.png');
 }
 
 .bg-vio{
@@ -250,20 +251,7 @@ body{
     background: transparent;
 }
 
-.wrapper{
-    padding: 10px;
-    margin-left: 82px;
-    padding-top: 75px;
-    background: var(--second-bg-color);
-    transition: margin-left .5s;
-}
-
-.sidebar{
-    width: 82px;
-    height: 100vh;
-    position: fixed;
-    margin-top: 65px;
-    background: var(--main-bg-color);
+.wrapper{ground: var(--main-bg-color);
     box-shadow: rgba(0,0,0,0.12) 0px 1px 4px 1px;
     overflow: hidden;
     z-index: 100;
@@ -499,6 +487,7 @@ body{
     color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background: url('../images/bg12.png');
 }
 
 .counter i {

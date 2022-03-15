@@ -1,11 +1,11 @@
 :root {
-    --primary-color: #4834d4;
-    --success-color: #6ab04c;
-    --warning-color: #f0932b;
-    --danger-color: #eb4d4b;
-    --violet-color: #922fbd;
-    --yellow-color: #ecc40e;
-    --lite-color: #0BDBDB;
+    --primary-color: linear-gradient(90deg, rgba(48,42,152,1) 0%, rgba(102,94,245,1) 35%, rgba(179,212,255,1) 100%);
+    --success-color: linear-gradient(90deg, rgba(49,87,33,1) 0%, rgba(123,195,93,1) 35%, rgba(199,244,180,1) 100%);;
+    --warning-color: linear-gradient(90deg, rgba(187,110,23,1) 0%, rgba(255,178,92,1) 35%, rgba(236,204,97,1) 100%);;
+    --danger-color: linear-gradient(90deg, rgba(251,100,77,1) 0%, rgba(233,168,136,1) 35%, rgba(226,189,156,1) 100%);;
+    --violet-color: linear-gradient(90deg, rgba(68,21,88,1) 0%, rgba(187,129,213,1) 35%, rgba(193,154,209,1) 100%);;
+    --yellow-color: linear-gradient(90deg, rgba(194,149,11,1) 0%, rgba(255,236,151,1) 35%, rgba(233,224,184,1) 100%);;
+    --lite-color: linear-gradient(90deg, rgba(38,30,181,1) 0%, rgba(75,165,218,1) 35%, rgba(156,238,255,1) 100%);;
 
     --light-color: #212529;
     --light-second-color: #727475;

@@ -109,8 +109,9 @@
 
     // Returns expense records(rows) between any two given years
     public function yrwise($UserId, $FROM, $TO){
-      $stmt = $this->pdo->prepare("SELECT * FROM expense WHERE (EXTRACT(year FROM Date) >= :fromdate AND EXTRACT(year FROM Date) <= (:todate)) AND UserId = :user ORDER BY Date");
-      $stmt->bindParam(":user", $UserId, PDO::PARAM_INT);
+      // $stmt = $this->pdo->prepare("SELECT * FROM expense WHERE (EXTRACT(year FROM Date) >= :fromdate AND EXTRACT(year FROM Date) <= (:todate)) AND UserId = :user ORDER BY Date");
+      $stmt = $this->pdo->prepare("SELECT * FROM expense WHERE (EXTRACT(year FROM Date) >= :fromdate AND EXTRACT(year FROM Date) <= (:todate)) ORDER BY Date");
+      // $stmt->bindParam(":user", $UserId, PDO::PARAM_INT);
       $stmt->bindParam(":fromdate", $FROM, PDO::PARAM_STR); 
       $stmt->bindParam(":todate", $TO, PDO::PARAM_STR);
       $stmt->execute();

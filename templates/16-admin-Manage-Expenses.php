@@ -6,7 +6,7 @@
         header('Location: ../index.php');
 	}
 
-	include_once 'skeleton.php'; 
+	include_once 'admin-skeleton.php'; 
 
 	// Deletes expense record
 	if(isset($_POST['delrec']))

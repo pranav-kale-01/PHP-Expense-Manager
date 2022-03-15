@@ -1,28 +1,27 @@
 <?php 
-    include_once "init.php";
+    include_once "./init.php";
     
     // User login check
     if (isset($_SESSION['UserId'])) {
-      header('Location: templates/3-Dashboard.php');
+        header('Location: ./templates/13-admin-Dashboard.php');
     }
-    
+
     // Validate credentials and log the user in
     if (isset($_POST['login']) && !empty($_POST)) {
         $password = $_POST['password'];
         $username = $_POST['username'];
-
+        
         if(!empty($username) || !empty($password)) {
             $username = $getFromU->checkInput($username);
             $password = $getFromU->checkInput($password);
-            
-            
-            if( $getFromU->checkAdmin($username) === true ) { 
-                $error = "Please Sign from the admin page";
+
+            if( $getFromU->checkAdmin($username) === false ) { 
+                $error = "The user is not a admin";
             }
-            else if( $getFromU->login($username, $password, './templates') === false ) {
+            else if( $getFromU->loginAdmin($username, $password, './templates') === false ) {
                 $error = "The username or password is incorrect";     
             }
-        } 
+          } 
     }
 ?>
 
@@ -33,8 +32,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="static/images/wallet.png" sizes="16x16" type="image/png">
-    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="icon" href="../static/images/wallet.png" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="./static/css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
@@ -54,7 +53,7 @@
         <div class="top-heading">
             <h1>Welcome to ExpenseManager!</h1>
         </div>
-        <form action="index.php" method="post" onsubmit = "return validate()" id="form1">
+        <form action="./12-admin-signin.php" method="post" onsubmit = "return validate()" id="form1">
 
             <div class="group">
 
@@ -84,24 +83,19 @@
                 }
             ?>
             
-            <div class="new-account" style="padding-top: 10px; padding-bottom: 5px">
-                <span style="color: rgba(0, 0, 0, 0.54); font-weight: bolder; font-family: 'Source Sans Pro';">Don't have an account?</span> 
-                <a href="templates/2-sign-up.php" style="text-decoration: none;"><span style="color: rgba(5, 0, 255, 0.81); font-weight: bolder; font-family: 'Source Sans Pro';">Sign up</span></a>
-            </div>
-
             <div class="new-account" style="padding-top: 5px; padding-bottom: 10px">
-                <span style="color: rgba(0, 0, 0, 0.54); font-weight: bolder; font-family: 'Source Sans Pro';">Are You a Admin?</span> 
-                <a href="./12-admin-signin.php" style="text-decoration: none;"><span style="color: rgba(5, 0, 255, 0.81); font-weight: bolder; font-family: 'Source Sans Pro';">Sign in here</span></a>
+                <span style="color: rgba(0, 0, 0, 0.54); font-weight: bolder; font-family: 'Source Sans Pro';">Are You a User?</span> 
+                <a href="./index.php" style="text-decoration: none;"><span style="color: rgba(5, 0, 255, 0.81); font-weight: bolder; font-family: 'Source Sans Pro';">Sign in here</span></a>
             </div>
 
         </form>
 
         <div class="img-container">
-            <img src="static/images/login.jpg" alt="Login-screen-picture">
+            <img src="./static/images/login.jpg" alt="Login-screen-picture">
         </div>
     </div>
 
-<script src="static/js/index.js"></script>
+<script src="../static/js/index.js"></script>
 </body>
 
 </html>
